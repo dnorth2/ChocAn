@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<style>
+table, th, td {
+  border:1px solid black;
+}
+</style>
+<body>
+
+<h2>Use Case Scenarios</h2>
+
+<p style="text-align:left">
+<strong>Use Case A: Bill ChocAn</strong> <br/>
+Context: The provider terminal has sent this system a request to bill a provider. <br/>
+The system received data for date of service, service code, server ID member ID, and (optionally) comments <br/>
+Actors: Provider <br/>
+Main Success Scenario: <br/>
+1. Includes Validate Members <br/>
+2. System receives complete data about session. <br/>
+3. System accesses current datetime info <br/>
+4. System writes treatment information to disc. <br/>
+5. System alerts provider that billing was successful. <br/>
+6. System ends scenario. <br/>
+Extensions: <br/>
+2.a: System receives incomplete data about treatment. <br/>
+2.a.1. System informs provider that it received bad data. <br/>
+2.a.2. System moves to step 5. <br/>
+5.a: System cannot make contact with provider. <br/>
+5.a.1. System moves to step 5. <br/>
+</p>
+
+<p style="text-align:left">
+<strong>Use Case B: Validate members</strong> <br/>
+Context: The provider terminal has sent this system a member ID to validate. <br/>
+Actors: Provider <br/>
+Main Success Scenario: <br/>
+1. System receives data of member ID number from provider terminal <br/>
+2. System finds member in its data set with the memberID it received <br/>
+3. System sends member's active status back to provider terminal. <br/>
+4. System ends scenario. <br/>
+Extensions: <br/>
+2.a: System cannot locate member with given member ID <br/>
+2.a.1. System transmits "Member not found" to provider terminal <br/>
+2.a.2. System moves to step 4. <br/>
+3.a: System cannot contact provider. <br/>
+3.a.1. System moves to step 4. <br/>
+</p>
+
+<p style="text-align:left">
+<strong>Use Case C: Request Provider Directory</strong> <br/>
+Context: The provider terminal has just requested a provider directory and transmitted the recipient email address <br/>
+Actors: Provider, email service <br/>
+Main Success scenario: <br/>
+1. System receives request to send provider a provider directory <br/>
+2. System checks that email address it received is valid. <br/>
+3. System generates provider directory pdf from its stored provider data. <br/>
+4. System creates email with provider directory as attachment and a standard text in the email body. <br/>
+5. System sends email to email address it was provided. <br/>
+6. System informs provider that email was sent successfully. <br/>
+7. System ends scenario. <br/>
+Extensions: <br/>
+2.a: Email address is not valid. <br/>
+2.a.1. System transmits  "Invalid email address" message to terminal. <br/>
+2.a.2. System moves to step 6. <br/>
+5.a: Email does not send. <br/>
+5.a.1. System transmits "Email won't send" message to terminal. <br/>
+5.a.2. System moves to step 7. <br/>
+6.a: System cannot contact provider. <br/>
+6.a.1. System moves to step 7. <br/>
+</p>
+
+<p style="text-align:left">
+<strong>Use Case D: Add Extends Member List</strong> <br/>
+Context: A ChocAn operator is going to add a member. <br/>
+Actors: ChocAn Operator <br/>
+Main Success Scenario: <br/>
+1. Operator navigates to add member directory <br/>
+2. Operator enters the member’s information <br/>
+3. Operator confirms to add member to system <br/>
+4. System shows member has successfully been added <br/>
+5. The program closes <br/>
+Extensions: <br/>
+3.a Member already exists <br/>
+3.a.1 System tells operator, member already in system <br/>
+3.a.2 The use case continues at step 5 <br/>
+</p>
+
+<p style="text-align:left">
+<strong>Use Case E: Add Extends Provider List</strong> <br/>
+Context: A ChocAn operator to add a provider. <br/>
+Actors: ChocAn Operator <br/>
+Main Success Scenario: <br/>
+1. Operator navigates to add provider directory <br/>
+2. Operator enters the provider’s information <br/>
+3. Operator confirms to add provider to system <br/>
+4. System shows provider has successfully been added <br/>
+5. The program closes <br/>
+Extensions: <br/>
+3.a Provider already exists <br/>
+3.a.1 System tells operator, provider already in system <br/>
+3.a.2 The use case continues at step 5 <br/>
+</p>
+
+<p style="text-align:left">
+<strong>Use Case F: Delete Extends Edit Member List</strong> <br/>
+Context: A ChocAn operator deletes member <br/>
+Actors: ChocAn Operator <br/>
+Main Success Scenario: <br/>
+1. Operator navigates to delete member directory <br/>
+2. Operator enters the member information <br/>
+3. System validates member to be deleted <br/>
+4. Operator confirms to delete member <br/>
+5. System shows member has successfully been delete <br/>
+6. The program closes <br/>
+Extensions: <br/>
+3.a: Member doesn’t exist in system <br/> 
+3.a.1 System tells operator, member does not exist in system <br/>
+3.a.2 The use case continues at step 6 <br/>
+</p>
+
+<p style="text-align:left">
+<strong>Use Case G: Delete Extends Edit Provider list</strong> <br/>
+Context: A ChocAn operator deletes provider <br/>
+Actors: ChocAn Operator <br/>
+Main Success Scenario: <br/>
+1. Operator navigates to delete provider directory <br/>
+2. Operator enters the provider information <br/>
+3. System validates provider to be deleted <br/>
+4. Operator confirms to delete provider <br/>
+5. System shows provider has successfully been deleted <br/>
+6. The program closes <br/>
+Extensions: <br/>
+3.a: Provider doesn’t exist in system <br/>
+3.a.1 System tells operator, provider does not exist in system <br/>
+3.a.2 The use case continues at step 6 <br/>
+</p>
+
+<p style="text-align:left">
+<strong>Use Case H: Update Extends Edit Member List</strong> <br/>
+Context: A ChocAn operator updates member <br/>
+Actors: ChocAn Operator <br/>
+Main Success Scenario: <br/>
+1. Operator navigates to update member directory <br/>
+2. Operator enters the member information <br/>
+3. System validates member to be updated <br/>
+4. Operator enters updated information <br/>
+5. System shows member information has been successfully updated <br/>
+6. The program closes <br/>
+Extensions: <br/>
+3.a Member doesn’t exist in the system <br/>
+3.a.1 System tells operator, member does not exist in system <br/>
+3.a.2 The use case continues at step 6 <br/>
+</p>
+
+<p style="text-align:left">
+<strong>Use Case I: Update Extends Edit Provider List</strong> <br/>
+Context: A ChocAn operator updates provider <br/>
+Actors: ChocAn Operator <br/> 
+Main Success Scenario: <br/>
+1. Operator navigates to update Provider directory <br/>
+2. Operator enters the provider information <br/>
+3. System validates provider to be updated <br/>
+4. Operator enters updated information <br/> 
+5. System shows provider information has been successfully updated <br/>
+6. The program closes <br/>
+Extensions: <br/>
+3.a: Provider doesn’t exist in the system <br/>
+3.a.1 System tells operator, Provider does not exist in system <br/>
+3.a.2 The use case continues at step 6 <br/>
+</p>
+
+<p style="text-align:left">
+<strong>Use Case J: Edit Member List</strong> <br/>
+Context: A ChocAn operator edits the member list <br/>
+Actors: ChocAn Operator <br/>
+Main Success Scenario: <br/>
+1. Operator navigates to member directory <br/>
+2. Operator edits the member list <br/>
+3. Operator can choose to add, delete, or update a member <br/>
+4. System tells operator action was successful <br/>
+5. The program closes <br/>
+Extensions: <br/>
+3.a: Adding a member that already exists <br/>
+3.a.1. System tells operator that the member is already in the system <br/>
+3.a.2. Use case continues at step 4 <br/> 
+3.b: Deleting or updating a member who doesn’t exist <br/>
+3.b.1. System tells operator the member doesn’t exist in the system <br/>
+3.b.2. Use case continues at step 4 <br/>
+</p>
+
+<p style="text-align:left">
+<strong>Use Case K: Edit Provider List</strong> <br/>
+Context: A ChocAn operator edits the provider list <br/>
+Actors: ChocAn Operator <br/>
+Main Success Scenario: <br/>
+1. Operator navigates to provider directory <br/>
+2. Operator edits the provider list <br/>
+3. Operator can choose to add, delete, or update a provider <br/>
+4. System tells operator action was successful <br/>
+5. The program closes <br/>
+Extensions: <br/>
+3.a: Adding a provider that already exists <br/>
+3.a.1. System tells operator that the provider is already in the system <br/>
+3.a.2. Use case continues at step 4 <br/>
+3.b: Deleting or updating a provider who doesn’t exist <br/>
+3.a.1. System tells operator the provider doesn’t exist in the system <br/>
+3.a.2. Use case continues at step 4 <br/>
+</p>
+
+<p style="text-align:left">
+<strong>Use Case L: Accounting Procedure</strong> <br/>
+Context: At the end of every week, a timer set for midnight on Friday initializes the main accounting procedure for ChocAn at the ChocAn Data Center.
+Actors: The end-of-week timer, ChocAn manager <br/>
+Main Success Scenario: <br/>
+1. The system timer recognizes that it is midnight on Friday and initializes the actions withing the main accounting procedure. <br/>
+2. The system reads the week’s file of services provided by the ChocAn providers to the members. <br/>
+3. The system sends each member who has received ChocAn services a member report, a list of services provided to that member, sorted in order of service date. <br/>
+3.1. The report includes member name, number, address, city, state, ZIP code, and the date, provider name and service name of each service provided.  <br/>
+3.2. The report is also sent as an email attachment. <br/>
+4. The system sends the provider report to each provider who billed ChocAn for their services that week. <br/>
+4.1. The report includes the provider name, number, address, city, state, ZIP, date of service, date and time the data was received by the computer, member name, member number, service code, fee to be paid, number of consultations, and total fee for the week. <br/>
+5. The system then creates the EFT record, the record of all electronic funds transfer data, and writes it to a disk  <br/>
+5.1. The banking software will later be used to accredit the provider’s accounts with the appropriate funds. <br/>
+6. The system creates the weekly summary report and sends the report to a ChocAn manager. <br/>
+6.1. The summary includes every provider to be paid that week, the number of consultations each provider had, and his/her total fee for that week.  <br/>
+6.2. The system prints a record of the total number of providers who provided services, the total number of consultations, and the total weekly fee. <br/>
+7. The system ends the process. <br/>
+Extensions: <br/>
+1.a: The timer malfunctions and doesn’t signal the end of the day on Friday <br/>
+1.a.1. The ChocAn Manager will go in and request the end-of-week accounting procedure manually to initiate the process. <br/>
+1.a.2. The accounting procedure will continue from step 1 once the procedure is manually initiated. <br/>
+</p>
+
+<p style="text-align:left">
+<strong>Use Case M: Create Member Report</strong> <br/>
+Context: The system creates and sends (as an email attachment)
+ to all appropriate members the report of all services each member received during that week. <br/>
+Actors: The end-of-week timer, ChocAn manager <br/>
+Main Success Scenario: <br/>
+1. The system creates the report after reading in the data from the file of services. <br/>
+1.1. The report contains data on includes member name, number, address, city, state, ZIP code, and the date, provider name and service name of each service provided. <br/>
+2. The system sends the report with all appropriate data to each member who received services that week as an email attachment. <br/>
+3. The system ends the process. <br/>
+Extensions: <br/>
+2.a: The system doesn’t have a valid/correct email on file and cannot send the member report to the appropriate users.  <br/>
+2.a.1 The ChocAn manager will proceed to go into the system and enter the member’s desired email to receive the member report each week. <br/>
+</p>
+
+<p style="text-align:left">
+<strong>Use Case N: Create Provider Report</strong> <br/>
+Context: The system creates and sends (as an email attachment) a file to all providers who billed ChocAn that week for their services. <br/>
+Actors: The end-of-week timer, ChocAn manager <br/>
+Main Success Scenario: <br/>
+1. The system creates the provider report after completing the member report and after reading in the data from the file of services. <br/>
+1.1. The report contains data on includes member name, number, address, city, state, ZIP code, and the date, provider name and service name of each service provided. <br/>
+2. The system verifies the information/provider is correct by comparing with the order the data was originally entered into the system. <br/>
+3. The system sends the report with all appropriate data to each member who received services that week as an email attachment. <br/>
+4. The system ends the process. <br/>
+Extensions: <br/>
+2.a: The data was entered incorrectly into the provider report from the provider form and verification of the provider services fails. <br/>
+2.a.1. The manager and provider will go into the system and review the report of services provided to manually verify the report. <br/>
+3.a: The system doesn’t have a valid/correct email on file and cannot send the provider report to the appropriate users. <br/>
+3.a.1. The ChocAn manager will proceed to go into the system and enter the provider’s desired email to receive the member report each week. <br/>
+</p>
+
+<p style="text-align:left">
+<strong>Use Case O: Create EFT Report</strong> <br/>
+Context: System documents all the financial data to be accredited to the providers for their weekly services. <br/>
+Actors: End-of-week timer, ChocAn manager <br/>
+Main Success Scenario:  <br/>
+1. After creating the member and provider report, the system compiles the week’s financial records and writes it to a disk. <br/>
+1.1. The data includes the amount the provider is to be paid, their total fee for the week, and any other miscellaneous financial data. <br/>
+2. The system then connects with the third-party banking software who ensures the providers are accredited with the appropriate funds in their accounts. <br/>
+3. The system ends the process. <br/>
+Extensions: <br/>
+1.a: The file with the data could be deleted or corrupted in some fashion. <br/>
+1.a.1. The ChocAn manager will go into the system and re-create the financial data file to then be sent manually to the banking software. <br/>
+</p>
+
+<p style="text-align:left">
+<strong>Use Case P: Create Summary Report</strong> <br/>
+Context: A report of the week’s services and financials is given to the manager  <br/>
+Actors: End-of-week timer, ChocAn manager <br/>
+Main Success Scenario: <br/>
+1. After the member, provider, and EFT report are concluded, the system compiles a summary report of the week. <br/>
+1.1. The summary includes every provider to be paid that week, the number of consultations each had, and his or her total fee for that week. <br/>
+2.	The system then prints a record of the total number of providers who provided services, the total number of consultations, and the overall fee total. <br/>
+3. The system ends the process. <br/>
+Extensions: N/A <br/>
+</p>
+
+<p style="text-align:left">
+<strong>Use Case Q: Manager Runs Report</strong> <br/>
+Context: As the manager, one has the ability to run a report at any given time. <br/>
+Actors: Provider <br/>
+Main Success Scenario: <br/>
+1. The manager runs a report for the provider that contains information pertaining to the services provided for the week and emails it to them. <br/>
+1.1. This report includes information for each service provided during the week, which is separated into these fields: date of service, date and time data were received by the computer, member name, member number, service code, and fee to be paid. <br/>
+1.2. Also, the information pertaining to the provider such as the provider's name, number, street address, city, state, and zip code are included. <br/>
+2. The manager runs a report for the member that contains information pertaining to the services recently provided to that member via email. <br/>
+2.1 This report includes details such as member number, name, address, city, state, and zip code are included in the email. <br/>
+2.2 For each service that has been provided to the member, the date of service, provider name, and service name must be included. <br/>
+3. An EFT transfer record is created to be sent to banks to ensure that the providers’ accounts are credited the correct sum of money <br/>
+3.1 The EFT record is written on a disk. <br/>
+4. A summary report is generated for the manager that includes data pertaining to the weekly activities of the providers <br/>
+4.1 The report includes every provider to be paid that week, the number of consultations each had, and total fee for that week for the specific provider. <br/>
+4.2 Also, the number of providers who provided services, the number of consultations, and the overall total are included in the document. <br/>
+5. The system ends the process. <br/>
+Extensions: N/A <br/>
+</p>
+
+<p style="text-align:left">
+<strong>Use Case R: Validation</strong> <br/>
+Context: The login process for all users of the ChocAn system <br/>
+Actors: Provider, Manager, ChocAn Operator <br/>
+Main Success Scenario: <br/>
+1.	Before accessing system, the respective user is prompted with a login screen <br/>
+1.1	The Login screen consists of prompts for a username and a password. E-mails must be in the form username@email.com, and a specific password must include 8 characters, and uppercase letter, and a special character. <br/>
+2.	Once valid information is entered, the user is presented a menu based on their specific role in the system. <br/>
+3.	Users use the system for their respective purpose <br/>
+4.	User logs out of the system from the main menu. <br/>
+Extensions:  <br/>
+1.a	User inputs invalid login information <br/>
+1.a.1.	 System informs user that their information is incorrect and sends the login prompt once again. <br/>
+2.a	User forgets to log out of system <br/>
+2.a.1.	 System has timeout system that will automatically log an inactive user out and return to login screen. <br/>
+</p>
+
+<p></p>
+
+<center><h2>Return to Main Report</h2>
+
+<p><a href="Report.html">Main Report</a></p>
+
+</body>
+</html>
+
+</body>
+</html>

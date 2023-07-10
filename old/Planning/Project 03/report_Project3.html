@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<body>
+<style>
+table, th, td {
+  border:1px solid black;
+}
+</style>
+<head>
+<style>
+    body {
+      background-image: url('sky-clouds.gif');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+</style>
+</head>
+<center><h2>Project 3 Report</h2>
+
+<p>Submitter: Brandon Jones</p>
+
+<center><h2>Header Table</h2>
+
+<table style="width: 100%;border-radius:10px;background-color:rgb(182, 120, 120);color:white;">
+    <tr>
+        <th>Name</th>
+        <th>CWID</th>
+        <th>Email Address</th>
+        <th>Hours Worked</th>
+    </tr>
+    <tr>
+        <th>Quillen Flanigan</th>
+        <th>12041273</th>
+        <th>qcflanigan@crimson.ua.edu</th>
+        <th>5</th>
+    </tr>
+    <tr>	
+        <th>Brandon Jones</th>
+        <th>12057773</th>
+        <th>bdjones15@crimson.ua.edu</th>
+        <th>5</th>
+    </tr> 
+    <tr>
+        <th>Ramsey Morrow</th>
+        <th>11864334</th>
+        <th>rcmorrow@crimson.ua.edu</th>
+        <th>3.5</th>
+    </tr>
+    <tr> 
+        <th>Deondre North</th>
+        <th>11871481</th>
+        <th>dlnorth@crimson.ua.edu</th>
+        <th>3</th>
+    </tr>  
+    <tr> 
+        <th>Keaton Rohlfs</th>
+        <th>11893990</th>
+        <th>kwrohlfs@crimson.ua.edu</th>
+        <th>3</th>
+    </tr>  
+    <tr> 
+        <th>Liam Tucker</th>
+        <th>12176455</th>
+        <th>letucker@crimson.ua.edu</th>
+        <th>4.5</th>
+    </tr>
+    
+</table>
+
+<p></p>
+
+<center><h2>Task Distribution Table</h2>
+
+<table style="border-radius:10px;background-color:rgb(182, 120, 120);color:white;">
+  <tr>
+  	<th>Name</th>
+    <th>Tasks Performed</th>
+    <th>Percent Work Contributed</th>
+  </tr>
+  <tr>
+  	<th>Quillen Flanigan</th>
+  	<th>Accounting Procedure, Provider Report, Summary Report Sequence Diagrams. Updated stereotyped class diagram, Updated accounting procedures, and Wrote out cohesion/coupling paragraph </th>
+  	<th>17%</th>
+  </tr>
+  <tr>	
+    <th>Brandon Jones</th>
+    <th>EFT Report, Member Report, and Request Report Sequence Diagrams. Also Submitter</th>
+    <th>17%</th>
+  </tr> 
+  <tr>
+    <th>Ramsey Morrow</th>
+    <th>Validation Use Case Scenario and Bill ChocAn Sequence Diagrams. Update Main Activity Diagram </th>
+    <th>16%</th>
+  </tr>
+  <tr> 
+    <th>Deondre North</th>
+    <th>Validate members, request provider directory</th>
+    <th>17%</th>
+  </tr>  
+  <tr> 
+    <th>Keaton Rohlfs</th>
+    <th>Add Member/Provider, Delete Member/Provider</th>
+    <th>16%</th>
+  </tr>  
+  <tr> 
+    <th>Liam Tucker</th>
+    <th>Update Provider, Update Member, Edit Provider List, Edit Member List. Update edit provider/member lists</th>
+    <th>17%</th>
+  </tr>  
+</table>
+<center><h2>Functional Analysis Paragraph</h2>
+
+<p style="background-color:rgb(182, 120, 120); border-radius: 10px; border-color: black; color:white; width: 100%;"> 
+  The verification process will be computerized. The terminal dials the ChocAn Data Center. 
+  The authentication. should be treated the same way. 
+  Each member report, provider report, and provider directory must be written to its own file. 
+  As for the EFT data, all that is required is that a file be set up containing the provider name, provider number, 
+  and the amount to be transferred. User Management will be saved in a dictionary containing emails and passwords. 
+  Hardware will be needed to contain these files and send data to the terminal when needed. 
+  Terminal will dial other systems as needed. Users will enter information on the terminal. 
+</p>
+<center><h2>Design Description</h2>
+<p style="background-color:rgb(182, 120, 120); border-radius: 10px; border-color: black; color:white; width: 100%;">
+        The concepts of coupling and cohesion are instrumental in object-oriented programming and are intertwined in the processes of software design. Coupling is defined as the integration and interaction between modules,
+        while cohesion is the interaction within the same module. Good design uses low levels of coupling and high levels of cohesion to ensure that the software is easy to manage, easy to debug, and easy to re-use/adapt to meet evolving needs. Our 
+        software allows for the appropriate amount of integration between modules while having a high level of interaction within individual modules. The users of the software will have properly segregated abilities within the software and each module will be able to access 
+        the needed data without effecting it and causing unnecessary interaction that could prove to be overly complicating. The software’s menus and services will be available to only those that need them and the software itself will limit dependency on each module themselves 
+        and instead be reliant on abstract applications that allow for high cohesion and low coupling. 
+</p>
+<center><h2>Class Diagram</h2>
+<center><img src="./Class_Diagram.png" alt="Class Diagram" class="center" width="1150px" height="675px">
+<p></p>
+<center><h2>Updated Use Case Diagram</h2>
+
+  <center><img src="./UCDProject2.png" alt="Use Case Diagram" class="center">
+  
+  <p></p>
+  
+  <center><h2>Updated Glossary</h2>
+  
+  <p><a href="./Glossary.html">Updated Glossary</a></p>
+  
+  <p></p>
+  
+  <center><h2>Updated Use Case Scenarios</h2>
+  
+  <p><a href="./UseCaseScenarios.html">Updated UseCaseScenarios</a></p>
+  
+  <p></p>
+  
+  <center><h2>Stereotyped Class Diagram</h2>
+  
+  <center><img src="./Project3 Updated Stereotyped class diagram.png" alt="Stereotyped Class Diagram" class="center">
+  
+  <p></p>
+  
+  <center><h2>Activity Diagrams</h2>
+  
+  <p><a href="./Activity Diagrams.html">Activity Diagrams</a></p>
+
+  <center><h2>Sequence Diagrams</h2>
+  
+    <p><a href="./Sequence Diagrams.html">Sequence Diagrams</a></p>
+  
+  <center><h2>Bitbucket Commit Screenshots</h2>
+  <center><img src="./Bitbucket Part 1.png" alt="Bitbucket 1" class="center" width="700px" height="600px">
+  <center><img src="./Bitbucket Part 2.png" alt="Bitbucket 2" class="center" width="700px" height="250px">
+  <p></p> 
+</body>
+</html>

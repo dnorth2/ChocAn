@@ -1,0 +1,28 @@
+Questions for clarification:
+
+Note that we are responsible for writing only the "ChocAn data processing software". 
+
+1. "Invalid number" and "Member suspended" are mentioned as possible reasons for a member to not be validated. Are there any other reasons why a member wouldn't be validated?
+Just those.
+** ACM updates ChocAN membership stuff for us; we don't have to deal with that.
+2. Will any of the services be provided in the evening? (i.e., is there any possibility a user will become invalid during their treatment?)
+   2A. If so, the member would be validated, but then we wouldn't allow them to be processed later. Is that the desired outcome?
+Don't worry about it
+3. What are the non-functional requirements for how long it can take to validate a member (how long can validation take)? 
+It wil be essentially instant
+4. How many ChocAn members must our software work for?
+5. Who is responsible for totalling the fees paid to a provider each week?
+We are, in our reports
+6. At any time both provider and member "records can be updated". Does this refer to personal info (like ZIP code) or specific transactions that have been logged?
+Personal info.
+7. Do we need to make transactions editable after the fact? Or is a logged transaction permanent?
+Logged transactions are permanent.
+8. If a member's account is invalidated during the week, what should be done with the services they have already received? Are they to be included in reports of payments to be made?
+They're still part of the report. This loophole, just ignore.
+9. Are the weekly reports sent at "midnight on Friday" to be sent at midnight at the end of the day Thursday/start of Friday or at the end of Friday/start of Saturday?
+Don't worry about it.
+10. How quickly must weekly reports be sent out? Are there any other non-functional requirements?
+11. How quickly must membership pages be updated based on data received from ACME? Are there any other non-functional requirements?
+We're not updating them.
+12. Who are the operators who add/delete people and providers from our system?
+Just "operators" is fine.
